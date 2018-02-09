@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        
+        <!-- Styles -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    
+    <body>
+        <div class="row">
+            <div class="col s12 m3 l2 sidenav blue">
+              <h3 class="black-text hide-on-med-and-down">Menu</h3> 
+                  <a href="#">Account</a>
+                  <a href="#">Clients</a>
+                  <a href="#">Settings</a>
+                  <a href="#">About</a>
+            </div>
+            <div class="col s12 m9 l10">
+                <div id="feed-loader" class="progress">
+                    <div class="indeterminate"></div>
+                </div>
+                <div id="feed">
+                </div>
+              
+              <!-- Pagination -->
+                <ul class="pagination hide">
+                    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                    <li class="active"><a href="#!">1</a></li>
+                    <li class="waves-effect"><a href="#!">2</a></li>
+                    <li class="waves-effect"><a href="#!">3</a></li>
+                    <li class="waves-effect"><a href="#!">4</a></li>
+                    <li class="waves-effect"><a href="#!">5</a></li>
+                    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Scripts -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/feed-update.js"> </script>
+    </body>
+</html>
+     
