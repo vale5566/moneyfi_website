@@ -43,3 +43,9 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #F0F8FF;
+    height: 50px;
+    font-size:20px;
+}
