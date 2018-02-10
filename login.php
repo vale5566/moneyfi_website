@@ -1,3 +1,19 @@
+<?php
+    @session_start();
+    if(isset($_POST['username']) && isset($_POST['password']) && !empty($_POST['username']) && !empty($_POST['password'])) {
+        $_SESSION['username'] = $_POST['username'];
+        $_SESSION['password'] = $_POST['password'];
+        if(isset($_POST['url']) && !empty($_POST['url'])) {
+            header('Location: url' + '.php');
+        } else {
+            header('Location: index.php');
+        }
+    } else {
+        unset($_SESSION['username']);
+        unset($_SESSION['password']);
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="de">
     <head>
@@ -13,12 +29,12 @@
     
     <body>	
         <div class="row">
-            <div id="sidebar"class="col s12 l2 sidenav blue">
-                <a href="index.html">Feed</a>
-                <a href="request-create.html">Request</a>
-                  <a href="accounts.html">Account</a>
-                  <a href="clients.html">Clients</a>
-                  <a href="settings.html">Settings</a>
+            <div id="sidebar" class="col s12 l2 sidenav blue">
+                <a href="index.php">Feed</a>
+                <a href="request-create.php">Request</a>
+                  <a href="accounts.php">Account</a>
+                  <a href="clients.php">Clients</a>
+                  <a href="settings.php">Settings</a>
                   <a href="#">About</a>
             </div>
 			
@@ -26,14 +42,12 @@
 			
                 <div class="topnav row valign-wrapper">
                     <div class="col s6">
-                        <a href="index.html">
+                        <a href="index.php">
                         <img id="logo" src="img/logo.png" alt="Logo Moneyfi" />
                         </a>
                     </div>
                     <div class="col s6 right-align">
-                        <a>Jubeki: </a>
-                        <a>144 XP</a>
-                        <a class="center light-blue-text"><i class="material-icons">account_circle</i></a>
+                        <a href="login.php" class="center light-blue-text"><i class="material-icons">account_circle</i></a>
                     </div>
                 </div>
 		  <!-- Compiled and minified CSS -->
@@ -41,19 +55,18 @@
 
 		  <!-- Compiled and minified JavaScript -->
 		  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	
+	<form id="login-form" action="login.php" method="POST">
       <div class="row">
         <div class="input-field col l3 m5 s9">
-            <input id="username" type="text" class="validate">
-            <label for="username">username</label>
+            <input id="username" name="username" value="<?php if(isset($_POST['username']) && !empty($_POST['username'])) {echo $_POST['username'];} ?>" type="text" class="<?php if(isset($_POST['username']) && empty($_POST['username'])) echo 'invalid'; ?>">
+            <label data-error="empty..." for="username">username</label>
         </div>
       </div>
       
       <div class="row">
         <div class="input-field col l3 m5 s9">
-            <input id="password" type="text" class="validate">
-            <label for="password">password</label
-              
+            <input id="password" type="password" name="password" value="<?php if(isset($_POST['password']) && !empty($_POST['password'])) {echo $_POST['password'];} ?>" type="text" class="<?php if(isset($_POST['password']) && empty($_POST['password'])) echo 'invalid'; ?>">
+            <label data-error="empty..." for="password">password</label>
          </div>
        </div>
       
@@ -61,10 +74,10 @@
         <div class="col">
             <button class="btn waves-effect waves-light" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
-            </button 
+            </button >
        </div>
       </div>
-
+    </form>
       </div>
       </div>
 

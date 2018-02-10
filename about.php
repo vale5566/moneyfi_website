@@ -1,3 +1,6 @@
+<?php
+    @session_start();
+?>
 <!DOCTYPE html>
 <html lang="de">
     <head>
@@ -14,55 +17,47 @@
     <body>
         <div class="row">
             <div id="sidebar"class="col s12 l2 sidenav blue">
-                <a href="index.html">Feed</a>
-                <a href="request-create.html">New Request</a>
-                  <a href="accounts.html">Account</a>
-                  <a href="clients.html">Clients</a>
-                  <a href="settings.html">Settings</a>
-                  <a href="about.html">About</a>
+                <a href="index.php">Feed</a>	
+                <a href="request-create.php">New Request</a>
+                  <a href="accounts.php">Account</a>
+                  <a href="clients.php">Clients</a>
+                  <a href="settings.php">Settings</a>
+                  <a href="about.php">About</a>
             </div>
 			
             <div id="content" class="col s12 l10">
 			
                 <div class="topnav row valign-wrapper">
                     <div class="col s6">
-                        <a href="index.html">
-                            <img id="logo" src="img/logo.png" alt="Logo Moneyfi" />
+                        <a href="index.php">
+                        <img id="logo" src="img/logo.png" alt="Logo Moneyfi" />
                         </a>
                     </div>
                     <div class="col s6 right-align">
-                        <a>Jubeki: </a>
-                        <a>144 XP</a>
-                        <a class="center light-blue-text"><i class="material-icons">account_circle</i></a>
+                        <a><?php if(isset($_SESSION['username'])) echo $_SESSION['username']; ?></a>
+                        <a href="login.php?url=about" class="center light-blue-text"><i class="material-icons">account_circle</i></a>
                     </div>
                 </div>
+					<div class = "col">
+					<h4>Moneyfi Media AG</h4>
+					<h5>Postal Adress </h5>
+					<h6>Moneyfi AG</h6>
+					<h6>Moneyway 21</h6>
+					<h6>13526 Moneyhome</h6>
+					
+					<h5>Phone: </h5>
+					<h6>+49 (0) 861 2351</h6>
 				
-				<div class = "col">
-					<h4>Language </h4>	
-					  <form action="#">
-						<p>
-						  <input name="group1" type="radio" id="test1" checked="checked"/>
-						  <label for="test1">Englisch</label>
-						</p>
-						<p>
-						  <input name="group1" type="radio" id="test2" disabled="disabled" />
-						  <label for="test2">German</label>
-						</p>
-						<p>
-						  <input class="with-gap" name="group1" type="radio" id="test3" disabled="disabled" />
-						  <label for="test3">Spanish</label>
-						</p>
-						<p>
-						  <input name="group1" type="radio" id="test4" disabled="disabled" />
-						  <label for="test4">French</label>
-						</p>
-					  </form>
-					  
-					  <div class = "col s4" style = "margin-top: 20px" >
-							  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-							  <i class="material-icons right">send</i> 
-							  </button>
-					  </div>
+					<h5>E-Mail </h5>
+					<h6>info@moneyfi.com</h6>
+					
+					<h5>People </h5>
+					<h6>Lukas Hüller  (Product Owner + Frontend-Coder)</h6>
+					<h6>Julius Kiekbisch  (Main-Coder)</h6>
+					<h6>Valentin Lieberknecht  (Backend-Coder)</h6>
+					<h6>Fedor Splitt  (Backend-Coder)</h6>
+					<h6>Levi Elias Israel (Designer)</h6>
+
 				</div>
               
               <!-- Pagination -->

@@ -1,3 +1,9 @@
+<?php
+    @session_start();
+    if(!isset($_SESSION['username']) || !isset($_SESSION['password']) || empty($_SESSION['username']) || empty($_SESSION['password'])) {
+        header('Location: login.php?url=settings');
+    }
+?>
 <!DOCTYPE html>
 <html lang="de">
     <head>
@@ -14,72 +20,54 @@
     <body>
         <div class="row">
             <div id="sidebar"class="col s12 l2 sidenav blue">
-                <a href="index.html">Feed</a>
-                <a href="request-create.html">New Request</a>
-                  <a href="accounts.html">Account</a>
-                  <a href="clients.html">Clients</a>
-                  <a href="settings.html">Settings</a>
-                  <a href="about.html">About</a>
+                <a href="index.php">Feed</a>
+                <a href="request-create.php">Request</a>
+                  <a href="accounts.php">Account</a>
+                  <a href="clients.php">Clients</a>
+                  <a href="settings.php">Settings</a>
+                  <a href="about.php">About</a>
             </div>
 			
             <div id="content" class="col s12 l10">
 			
                 <div class="topnav row valign-wrapper">
                     <div class="col s6">
-                        <a href="index.html">
-                        <img id="logo" src="img/logo.png" alt="Logo Moneyfi" />
+                        <a href="index.php">
+                            <img id="logo" src="img/logo.png" alt="Logo Moneyfi" />
                         </a>
                     </div>
                     <div class="col s6 right-align">
-                        <a>Jubeki: </a>
-                        <a>144 XP</a>
+                        <a><?php echo $_SESSION['username'] ?></a>
                         <a class="center light-blue-text"><i class="material-icons">account_circle</i></a>
                     </div>
                 </div>
-					<div class = "col">
-						<div class = "row">
-							<div class = "col l12 m12 s12">
-								<h4>Name: Jubeki </h4>
-								<h4>E-Mail: Jubeki1999@gmail.com </h4>
-							</div>
-						</div>
-					<div class = "row valign-wrapper">
-						<div class = "col l7 m7 s7">
-							<h4>Password: ******	 </h4>
-						</div>
-						<div class = "col l5 m5 s5">
-								  <button class="btn waves-effect waves-light right" type="submit" name="action">change PW
-								  <i class="right"></i> 
-								  </button>
-						</div>
-					</div>
-					
-					  <!--<div class="chips"></div>-->
-					  <!--<div class="chips chips-initial"></div>-->
-					  <div class = "row">
-						  <div class="chips chips-placeholder col s8"></div>
-						  <div class "col s4">
-							  <button class="btn waves-effect waves-light right" type="submit" name="action">Submit
+				
+				<div class = "col">
+					<h4>Language </h4>	
+					  <form action="#">
+						<p>
+						  <input name="group1" checked type="radio" id="test1" />
+						  <label for="test1">English</label>
+						</p>
+						<p>
+						  <input name="group1" type="radio" id="test2" disabled="disabled" />
+						  <label for="test2">German</label>
+						</p>
+						<p>
+						  <input class="with-gap" name="group1" type="radio" id="test3" disabled="disabled" />
+						  <label for="test3">Spanish</label>
+						</p>
+						<p>
+						  <input name="group1" type="radio" id="test4" disabled="disabled" />
+						  <label for="test4">French</label>
+						</p>
+					  </form>
+					  
+					  <div class = "col s4" style = "margin-top: 20px" >
+							  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
 							  <i class="material-icons right">send</i> 
 							  </button>
-						  </div>
 					  </div>
-					  <!--<div class="chips chips-autocomplete"></div>-->
-					
-				  <form action="#">
-					<p>
-					  <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-					  <label for="filled-in-box">Please send me E-Mails for job requests.</label>
-					</p>
-					<p>
-					  <input type="checkbox" class="filled-in" id="filled-in-box2" checked="checked" />
-					  <label for="filled-in-box2">Please send me the Moneyfi newsletter.</label>
-					</p>
-					<p>
-					  <input type="checkbox" class="filled-in" id="filled-in-box3" checked="checked"  disabled="disabled"/>
-					  <label for="filled-in-box3">I accept the conditions.</label>
-					</p>
-				  </form>
 				</div>
               
               <!-- Pagination -->

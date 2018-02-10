@@ -1,3 +1,9 @@
+<?php
+    @session_start();
+    if(!isset($_SESSION['username']) || !isset($_SESSION['password']) || empty($_SESSION['username']) || empty($_SESSION['password'])) {
+        header('Location: login.php?url=request-create');
+    }
+?>
 <!DOCTYPE html>
 <html lang="de">
     <head>
@@ -14,23 +20,22 @@
     <body>
         <div class="row">
             <div class="col s12 m3 l2 sidenav blue">
-                <a href="index.html">Feed</a>
-                <a href="request-create.html">New Request</a>
-                  <a href="accounts.html">Account</a>
-                  <a href="clients.html">Clients</a>
-                  <a href="settings.html">Settings</a>
-                  <a href="about.html">About</a>
+                <a href="index.php">Feed</a>
+                <a href="request-create.php">Request</a>
+                  <a href="accounts.php">Account</a>
+                  <a href="clients.php">Clients</a>
+                  <a href="settings.php">Settings</a>
+                  <a href="about.php">About</a>
             </div>
             <div id="content" class="col s12 l10">
                 <div class="topnav row valign-wrapper">
                     <div class="col s6">
-                        <a href="index.html">
+                        <a href="index.php">
                         <img id="logo" src="img/logo.png" alt="Logo Moneyfi" />
                         </a>
                     </div>
                     <div class="col s6 right-align">
-                        <a>Jubeki: </a>
-                        <a>144 XP</a>
+                        <a><?php echo $_SESSION['username'] ?></a>
                         <a class="center light-blue-text"><i class="material-icons">account_circle</i></a>
                     </div>
                 </div>
