@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col s12 m3 l2 sidenav blue">
                 <a href="index.php">Feed</a>
-                <a href="request-create.php">Request</a>
+                <a href="request-create.php">New Request</a>
                   <a href="accounts.php">Account</a>
                   <a href="clients.php">Clients</a>
                   <a href="settings.php">Settings</a>
