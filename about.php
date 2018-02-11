@@ -35,7 +35,7 @@
                     </div>
                     <div class="col s6 right-align">
                         <a><?php if(isset($_SESSION['username'])) echo $_SESSION['username']; ?></a>
-                        <a href="login.php?url=about" class="center light-blue-text"><i class="material-icons">account_circle</i></a>
+                        <a href="login.php" class="center light-blue-text"><i class="material-icons">account_circle</i></a>
                     </div>
                 </div>
 					<div class = "col">
