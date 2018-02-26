@@ -26,7 +26,7 @@
 			
                 <div class="topnav row valign-wrapper">
                     <div class="col s6">
-                        <a href="index.html">
+                        <a href="index.php">
                         <img id="logo" src="img/logo.png" alt="Logo Moneyfi" />
                         </a>
                     </div>

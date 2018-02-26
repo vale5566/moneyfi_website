@@ -1,5 +1,5 @@
 var xmlhttp = new XMLHttpRequest();
-var url = "http://localhost:8080/feed/";
+var url = "localhost:8080/feed/";
 
 var xmlaccept = new XMLHttpRequest();
 

@@ -42,7 +42,7 @@
   
   
   <div class="col s12 m9 l10">
-    <form id="feed-create-form" action="http://localhost:8080/feed/create" method="POST">
+    <form id="feed-create-form" action="localhost:8080/feed/create" method="POST">
         <div id="error">
         
         </div>

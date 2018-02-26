@@ -8,7 +8,7 @@ $(document).ready(function() {
             url: $(this).attr("action"),
             data: $formdata,
             success: function(data) {
-                window.location.href = "index.html";
+                window.location.href = "index.php";
             },
             error: function(data) {
                 $(this).find("#error").html(data);
